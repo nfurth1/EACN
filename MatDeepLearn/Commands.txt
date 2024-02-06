@@ -1,0 +1,10 @@
+cd C:\Users\nfurth\Desktop\MatDeepLearn
+activate MatDeepLearn
+
+python main.py --data_path=data/MeltingPoint/json --model_path=my_model.pth --model=GCN --job_name=Test --run_mode=Training --reg=0.0075 --reg_funct="L2"
+
+python main.py --data_path=data/EACN/GAFF/-Raw-/json --model_path=my_model.pth --model=CGCNN --job_name=Test --run_mode=CV --reg=0.0 --reg_funct="L2"
+
+python main.py --data_path=C:\Users\nfurth\Desktop\Data\EACN\test\json --job_name=Test --run_mode=Predict --model_path=C:\Users\nfurth\Desktop\MatDeepLearn\ModelSavePath\EACN\MPNN-GAFF\my_model.pth
+
+python main.py --data_path=data/EACN/GAFF/-Raw-/json --model=CGCNN --job_name="my_hyperparameter_job" --run_mode=Hyperparameter --reg=0 --reg_funct="L2"
