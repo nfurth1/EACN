@@ -16,9 +16,8 @@ Experimental determination of EACN is traditionally time-consuming and purity-se
 
 **Key highlights:**
 - Three GNN architectures: MPNN, CGCNN, and GCN
-- Geometry optimization studies (none, MMFF94, GAFF)
+- Geometry optimization studies (None, MMFF94, GAFF)
 - Feature-based XGBoost using RDKit descriptors
-- Best model achieved R² ≈ 0.9 with MAE ≈ 1.15 EACN units
 
 ## Models Implemented
 
@@ -35,25 +34,16 @@ Experimental determination of EACN is traditionally time-consuming and purity-se
 - **Data Source:** Published experimental EACN values from literature references.
 - **SMILES Input:** Obtained via PubChem or cheminfo.org.
 
-## Results
-
-- Geometry optimization improves model performance significantly.
-- CGCNN with MMFF94 optimization provided the best GNN results.
-- XGBoost with RDKit descriptors performed extremely well with minimal computational resources.
-
-| Model | R² (Test Set) | MAE | RMSE |
-|:-----:|:-------------:|:---:|:----:|
-| CGCNN (MMFF94) | 0.90 | 1.15 | ~1.6 |
-| XGBoost | 0.89 | 1.17 | ~1.68 |
-
 ## Repository Structure
 
 ```
-/data/            # SMILES, descriptors, and EACN values
-/scripts/         # Data preprocessing, model training, evaluation
-/models/          # Trained model checkpoints
-/results/         # Regression plots, error distributions
-README.md
+/MatDeepLearn/           #Our Implementation of MatDeepLearn for GNNs
+/Model Results           #Meta Data for our Model Results
+Descriptors.ipynb        #XGBoost Implementation
+Error Plots.ipynb        #Plot Generation for Results
+SSBSSW.ipynb             #F-Statistic Generation for Results (Functional Groups)
+Descriptors.py           #RDKit Descriptor Generation called by the Notebook files
+README.md            
 requirements.txt  # Python dependencies
 ```
 
@@ -63,20 +53,6 @@ requirements.txt  # Python dependencies
 git clone https://github.com/nfurth1/EACN.git
 cd EACN
 pip install -r requirements.txt
-```
-
-## Usage
-
-Train a model (example for XGBoost):
-
-```bash
-python scripts/train_xgboost.py --input data/descriptors.csv --output models/xgboost_model.pkl
-```
-
-Evaluate model performance:
-
-```bash
-python scripts/evaluate_model.py --model models/xgboost_model.pkl --test data/test_set.csv
 ```
 
 ## Citation
@@ -96,8 +72,3 @@ If you use this work, please cite:
   doi={10.1021/acs.jpca.4c00936}
 }
 ```
-
-## License
-
-This project is licensed under the MIT License.  
-See the [LICENSE](LICENSE) file for details.
