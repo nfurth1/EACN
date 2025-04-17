@@ -1,0 +1,10 @@
+pandas
+numpy
+scipy
+matplotlib
+rdkit
+xgboost
+scikit-learn
+tensorflow
+keras
+tqdm
